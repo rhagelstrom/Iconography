@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+    <!-- Spell Record Header -->
+    <windowclass name="power_header" merge="join">
+        <script file="5e/campaign/scripts/power.lua" />
+    </windowclass>
+
+    <!-- Spell record display -->
+    <windowclass name="power_main" merge="join">
+        <script file="5e/campaign/scripts/spell.lua" />
+        <sheetdata>
+            <string_columnh name="castingtime" >
+                <anchored>
+                    <right offset="-105"/>
+                </anchored>
+            </string_columnh>
+            <string_columnh name="range" >
+                <anchored>
+                    <right offset="-105"/>
+                </anchored>
+            </string_columnh>
+            <string_columnh name="components">
+                <anchored>
+                    <right offset="-105"/>
+                </anchored>
+            </string_columnh>
+            <string_columnh name="duration" >
+                <anchored>
+                    <right offset="-105"/>
+                </anchored>
+            </string_columnh>
+            <icon_column_right name="Iconography"/>
+            <simplestring name="name">
+                <anchored to="columnanchor">
+                    <top />
+                    <right parent="" offset="-5" />
+                </anchored>
+                <invisible/>
+                <script>
+                    function onValueChanged()
+                        window.update();
+                    end
+                </script>
+            </simplestring>
+        </sheetdata>
+    </windowclass>
+
+    <template name="icon_column_right">
+        <genericcontrol>
+            <anchored to="castingtime_label" relation="relative" width="100" height="100">
+                <top />
+                <right parent="" offset="-5" />
+            </anchored>
+            <icon>blank_Iconography</icon>
+        </genericcontrol>
+    </template>
+</root>

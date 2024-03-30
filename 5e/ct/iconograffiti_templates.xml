@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+<template name="ct_Iconography">
+    <genericcontrol>
+        <anchored to="leftanchor" width="20" height="20">
+            <top />
+            <left anchor="right" relation="relative" offset="5" />
+        </anchored>
+        <icon>blank_Iconography</icon>
+    </genericcontrol>
+</template>
+
+<template name="power_Iconography">
+    <genericcontrol>
+        <anchored width="20" height="20" />
+        <icon>blank_Iconography</icon>
+    </genericcontrol>
+</template>
+</root>

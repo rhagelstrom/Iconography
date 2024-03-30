@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+    <!-- Feat record display -->
+    <windowclass name="reference_feat_header" merge="join">
+        <script file="5e/campaign/scripts/record_feat.lua" />
+        <sheetdata>
+            <string_record_header_name name="name">
+                <script>
+                    function onValueChanged()
+                        window.update();
+                    end
+                </script>
+            </string_record_header_name>
+        </sheetdata>
+    </windowclass>
+</root>

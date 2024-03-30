@@ -1,0 +1,9 @@
+<root>
+    <includefile source="5e/campaign/record_power_item.xml"/>
+    <includefile source="5e/campaign/record_power.xml"/>
+    <includefile source="5e/campaign/record_feat.xml"/>
+    <includefile source="5e/campaign/campaign_masterindex.xml"/>
+    <includefile source="5e/ct/ct_host_entry_section.xml"/>
+    <includefile source="5e/ct/ct_client_entry_section.xml"/>
+    <includefile source="5e/ct/Iconography_templates.xml"/>
+</root>

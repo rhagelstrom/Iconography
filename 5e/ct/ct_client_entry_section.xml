@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<windowclass name="clientct_effect" merge="join">
+		<script file="5e/ct/scripts/ct_effect.lua" />
+		<sheetdata>
+			<ct_Iconography name="ct_Iconography" insertbefore="rightanchor"/>
+		</sheetdata>
+	</windowclass>
+</root>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root release="3.0" version="3">
+	<announcement text="Iconography ~dev_version~\rby Ryan Hagelstrom Samson 2024\rIcons used with permission CC 3.0. See README.md for attribution" font="emotefont" icon="Iconography"/>
+	<properties>
+    	<loadorder>1502</loadorder>
+		<name>Feature: Iconography</name>
+		<version>~dev_version~</version>
+		<author>Ryan Hagelstrom</author>
+		<description>Better Icons</description>
+	</properties>
+	<base>
+		<script name="IconographyManager" file="scripts/Iconography.lua" />
+		<includefile source="5e/loader.xml"/>
+		<icon name='blank_Iconography' file ='graphics/blank.png' />
+		<icon name='Iconography' file ='graphics/Iconography.webp' />
+  	</base>
+</root>

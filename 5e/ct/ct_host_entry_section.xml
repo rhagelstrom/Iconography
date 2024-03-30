@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+    <windowclass name="ct_power" merge="join">
+        <script file="5e/ct/scripts/ct_power.lua" />
+		<sheetdata>
+            <power_Iconography name="power_Iconography" insertbefore="value">
+				<script>
+					function onInit()
+						if TokenSpell_B9ST then
+							self.setAnchor('left', '', 'left', '', 55);
+						end
+					end
+				</script>
+                <anchored position="insidetopleft" offset="30,2" width="20" height="20" />
+			</power_Iconography>
+            <string_textlistitem name="value">
+				<script>
+					function onInit()
+						if TokenSpell_B9ST then
+							self.setAnchor('left', '', 'left', '', 80);
+						end
+					end
+					function onValueChanged()
+						window.update();
+					end
+				</script>
+				<anchored merge="replace" position="insidetopleft" offset="55,2">
+					<right />
+				</anchored>
+			</string_textlistitem>
+        </sheetdata>
+    </windowclass>
+
+	<windowclass name="ct_effect" merge="join">
+		<script file="5e/ct/scripts/ct_effect.lua" />
+		<sheetdata>
+			<ct_Iconography name="ct_Iconography" insertbefore="rightanchor"/>
+		</sheetdata>
+	</windowclass>
+</root>

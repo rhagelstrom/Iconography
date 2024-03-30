@@ -1,0 +1,21 @@
+<root>
+    <windowclass name="masterindexitem" merge="join">
+        <script file="5e/campaign/scripts/masterindex.lua" />
+		<sheetdata>
+            <genericcontrol name="Iconography" insertafter="name">
+                <anchored position="insidetopleft" offset="30" height="20">
+                    <right parent="rightanchor" anchor="left" offset="-5" relation="relative"/>
+                </anchored>
+                <icon>blank_Iconography</icon>
+			</genericcontrol>
+			<masterindexitem_name name="name">
+                <anchored offset="55,2" />
+                <script>
+                    function onValueChanged()
+                        window.update();
+                    end
+                </script>
+            </masterindexitem_name>
+        </sheetdata>
+    </windowclass>
+</root>
