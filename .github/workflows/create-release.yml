@@ -51,10 +51,10 @@ jobs:
         exclude: ${{ env.FILE_TYPE_EXLUSIONS }}
         replace: ${{github.ref_name}}
 
-    - name: Markdown to PDF
-      run: |
-        sudo npm install -g md-to-pdf
-        md-to-pdf ${{ env.README }}${{ env.MARKDOWN }} --stylesheet ${{ env.THEME }} > ${{ env.RESOURCES }}${{ env.README }}${{ env.PDF }}
+    # - name: Markdown to PDF
+    #   run: |
+    #     sudo npm install -g md-to-pdf
+    #     md-to-pdf ${{ env.README }}${{ env.MARKDOWN }} --stylesheet ${{ env.THEME }} > ${{ env.RESOURCES }}${{ env.README }}${{ env.PDF }}
 
     - name: Zip Assets Into ${{ github.event.repository.name }}${{ env.EXTENSION }} File
       uses: thedoctor0/zip-release@0.7.6

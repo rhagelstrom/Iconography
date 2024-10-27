@@ -32,7 +32,7 @@
             </string_columnh>
             <icon_column_right name="Iconography"/>
             <simplestring name="name">
-                <anchored to="columnanchor">
+                <anchored to="contentanchor">
                     <top />
                     <right parent="" offset="-5" />
                 </anchored>

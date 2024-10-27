@@ -2,7 +2,7 @@
 --	  	Copyright © 2024
 --	  	This work is licensed under a Creative Commons license 3.0.
 --      http://creativecommons.org/licenses/by/3.0/
--- luacheck: globals IconographyManager IconCommon
+-- luacheck: globals IconographyManager IconographyManager
 -- luacheck: globals onInit onClose customAddActorDisplayEffects moddedUpdateEffectsHelper
 -- luacheck: globals getIconNextPositionXY onHover customAddChatMessage customDeliverChatMessage
 -- luacheck: globals customOnReceiveMessage parseChatText changeChat getIconSize customOnDeliverMessage
@@ -19,7 +19,14 @@ local aConditions_sm = {};
 local aSpellsTraits = {};
 local aSpellsTraits_sm= {};
 
+local _aIconography = {
+	aDataMap = { "Iconography", "reference.Iconography" },
+	sRecordDisplayClass = "Iconography",
+	bExport = 1,
+};
+
 function onInit()
+    LibraryData.setRecordTypeInfo("Iconography", _aIconography);
     onDeliverMessage = ChatManager.onDeliverMessage;
     onReceiveMessage = ChatManager.onReceiveMessage;
     addChatMessage = Comm.addChatMessage;
@@ -55,7 +62,7 @@ function onClose()
 
 end
 
-function addConditions(bSmall, vType, sIcon)
+function addConditions(vType, bSmall, sIcon)
     if type(vType) == "table" then
 		for kTag,vTag in pairs(vType) do
             if bSmall then
@@ -76,7 +83,7 @@ function addConditions(bSmall, vType, sIcon)
     end
 end
 
-function addSpellsTraits(bSmall, vType, sIcon)
+function addSpellsTraits(vType, bSmall, sIcon)
     if type(vType) == "table" then
 		for kTag,vTag in pairs(vType) do
             if bSmall then
@@ -473,9 +480,9 @@ function changeChat(messagedata)
         return;
     end
     local sParsedChat = parseChatText(messagedata.text);
-    if sParsedChat and IconCommon.getConditionSmall(sParsedChat) or IconographyManager.getSpellTraitSmall(sParsedChat) then
-        if IconCommon.getConditionSmall(sParsedChat) then
-            messagedata.icon = IconCommon.getConditionSmall(sParsedChat);
+    if sParsedChat and IconographyManager.getConditionSmall(sParsedChat) or IconographyManager.getSpellTraitSmall(sParsedChat) then
+        if IconographyManager.getConditionSmall(sParsedChat) then
+            messagedata.icon = IconographyManager.getConditionSmall(sParsedChat);
         else
             messagedata.icon = IconographyManager.getSpellTraitSmall(sParsedChat);
         end
@@ -529,14 +536,14 @@ function parseEffectLabelGetIcon(sEffect, bLarge)
     if sLabel then
         sLabel = StringManager.sanitize(sLabel);
         if bLarge then
-            if IconCommon.getCondition(sLabel) then
-                sIcon = IconCommon.getCondition(sLabel);
+            if IconographyManager.getCondition(sLabel) then
+                sIcon = IconographyManager.getCondition(sLabel);
             elseif IconographyManager.getSpellTrait(sLabel) then
                 sIcon = IconographyManager.getSpellTrait(sLabel);
             end
         else
-            if IconCommon.getConditionSmall(sLabel) then
-                sIcon = IconCommon.getConditionSmall(sLabel);
+            if IconographyManager.getConditionSmall(sLabel) then
+                sIcon = IconographyManager.getConditionSmall(sLabel);
             elseif IconographyManager.getSpellTraitSmall(sLabel) then
                 sIcon = IconographyManager.getSpellTraitSmall(sLabel);
             end

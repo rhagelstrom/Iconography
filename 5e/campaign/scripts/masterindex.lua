@@ -22,7 +22,6 @@ function update()
         name.setAnchor('right', 'rightanchor', 'left', 'relative', -5);
         Iconography.setVisible(false);
         Iconography.setEnabled(false);
-        -- Debug.chat("Here")
     else
         Iconography.setVisible(true);
         Iconography.setEnabled(true);
